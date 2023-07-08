@@ -6,16 +6,15 @@
     top: 10%;
 
 }
-form {
-   width: 35%;
+.form_cont {
    margin: auto;
 
 }
-.main_form-cont label{
+.main_form-cont >label{
     float: left;
     width: 100%;
 }
-.main_form-cont input{
+.main_form-cont >input{
     width: 100%;
     float: left;
     

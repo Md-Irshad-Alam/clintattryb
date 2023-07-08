@@ -68,7 +68,7 @@ export function ContainedInputs() {
 
   return (
     <div className='main_form-cont'>
-      <form onSubmit={handleInput}>
+      <form onSubmit={handleInput} className='form_cont'>
         <label htmlFor="Image"> image : 
         <input
           type="text"
