@@ -2,22 +2,33 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import AuthContext from '../Context/context'
 import  style from "./style.css";
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 function ViewAll() {
-  // "image":"hello.png",
-  // "mileage": "50000",
-  // "previous_owners": 2,
-  // "maintenance_history": "Regularly serviced",
-  // "accident_history": "No accidents",
-  // "condition": "Good",
-  // "kms_on_odometer": 75000,
-  // "major_scratches": false,
-  // "original_paint": true,
-  // "accidents_reported": 0,
-  // "previous_buyers": 1,
-  // "registration_place": "New York"
+ 
+  let {data} =  useContext(AuthContext)
 
-    let {data} =  useContext(AuthContext)
-    console.log(data)
+  let history  = useNavigate();
+  const handledelete = (ele)=>{
+    let id = ele.ele._id;
+    console.log(id)
+
+    axios.delete(`https://att-server.onrender.com/auth/${id}`)
+      .then((response) => {
+        console.log(response.data);
+        toast("Record deleted from the databse ")
+        history("/product")
+      })
+      .catch((error) => {
+        console.log(error);
+        toast("Faild to delete")
+
+      });
+   
+  }
+
+
   return (
     <div className='main_view_container'>
       <table className='table'>
@@ -64,11 +75,16 @@ function ViewAll() {
              <td>{ele.accidents_reported}</td>
              <td>{ele.previous_buyers}</td>
              <td>{ele.registration_place}</td>
-             <td><button>update</button></td>
-             <td><button>Delete</button></td>
+             <td>
+             <Link to={`/item/${ele._id}`} >
+             <button>update</button>
+             </Link>
+              </td>
+             <td>
+              <button onClick={()=> handledelete({ele})}>Delete</button>
+              </td>
              </tr>
              
-            
               </tbody>
             )
         })

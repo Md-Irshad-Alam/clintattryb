@@ -2,7 +2,8 @@
 import Axios from 'axios'
 
 
-const url = "http://localhost:8080"
+const url = "https://att-server.onrender.com"
+// const url = "http://localhost:8080"
 
 const axios = Axios.create({
     baseURL: url,

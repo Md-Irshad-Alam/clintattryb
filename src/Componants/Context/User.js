@@ -5,10 +5,6 @@ export async function loginApi(email, password) {
   return axios.post("/auth/login", {
     email,
     password,
-  }).then((responce)=>{
-    toast( `Login successfully completed `)
-  }).catch((error)=>{
-    toast("opps Login faild ")
   })
 }
 
@@ -66,36 +62,6 @@ export async function market_invetryAPI(
   })
 }
 
-export async function updateAPI(
-  image,
-  mileage,
-  previous_owners,
-  maintenance_history,
-  accident_history,
-  condition,
-  major_scratches,
-  original_paint,
-  kms_on_odometer,
-  accidents_reported,
-  previous_buyers,
-  registration_place) {
-
-    
-  return axios.put(`/auth/create`,{
-      image,
-      mileage,
-      previous_owners,
-      maintenance_history,
-      accident_history,
-      condition,
-      major_scratches,
-      original_paint,
-      kms_on_odometer,
-      accidents_reported,
-      previous_buyers,
-      registration_place
-  })
-}
 
 export async function ome_spec_API (){
   return axios.get("/auth/getAll")

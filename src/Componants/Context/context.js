@@ -21,17 +21,22 @@ export function AuthContextProvider({children}) {
     function login(email, password) {
         loginApi(email, password)
         .then(response => {
-       
+            console.log(response)
              const token = response.data.token;
+             console.log(token)
              localStorage.setItem('auth-token', token);
              setShowLoginForm(true);
              window.location.reload();
              
-        })
-        .catch(err => {
-            window.alert("Login faild")
+        }).catch((error)=>{
+            console.log(error)
         })
     }
+    // .then((responce)=>{
+    //     toast( `Login successfully completed `)
+    //   }).catch((error)=>{
+    //     toast("opps Login faild ")
+    //   })
 
     function logout() {
         localStorage.removeItem('auth-token');

@@ -1,23 +1,45 @@
 
 
 .main_form-cont{
-    display: grid;
-    position: absolute;
-    top: 10%;
-
+  
+  margin: initial;
+  width: fit-content;
+  width: 46vw;
+  margin: auto;
+  overflow: hidden;
+  margin-top: -84px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 .form_cont {
-   margin: auto;
+  margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: inherit;
 
 }
-.main_form-cont >label{
-    float: left;
-    width: 100%;
+ .label{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* row-gap: 10px; */
+  margin: 5px;
 }
-.main_form-cont >input{
-    width: 100%;
-    float: left;
-    
+.input{
+  width: 70%;
+  padding: 5px;  
+}
+.input-buton{
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin: auto;
 }
 
 /* view table */

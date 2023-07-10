@@ -39,7 +39,7 @@ const history = useNavigate();
     let {name, email, password} = form.values;
       if(type=="login"){
         login(email,password)
-        history('/')
+        history('/dealer')
 
       }
       else if(type=="register"){
